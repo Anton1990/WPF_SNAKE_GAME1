@@ -1,14 +1,31 @@
 ﻿<Window x:Class="WpfApplication1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Canvas  Name="paintSurface" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1" >
+        Title="MainWindow" Height="350" Width="525"
+        KeyDown="Window_KeyDown"
+        >
+
+
+    <Window.InputBindings>
+        <KeyBinding Key="Down" Command="{Binding refreshAll}"/>
+        <KeyBinding Key="Up" Command="{Binding refreshAll}"/>
+        <KeyBinding Key="Left" Command="{Binding refreshAll}"/>
+        <KeyBinding Key="Right" Command="{Binding refreshAll}"/>
+
+
+    </Window.InputBindings>
+
+    <Canvas  Name="paintSurface" MouseDown="Canvas_MouseDown_1" MouseMove="Canvas_MouseMove_1">
         <Canvas.Background>
             <SolidColorBrush Color="White" Opacity="0"/>
         </Canvas.Background>
-        <Button Content="GetNumberElements" Canvas.Left="196" Canvas.Top="130" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="167" Name="button_1"/>
+        <Button Content="Add" Canvas.Left="350" Canvas.Top="56" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="167" Name="button_1"/>
 
-        <TextBox Canvas.Left="287" TextWrapping="Wrap" Text="TextBox" Canvas.Top="255" Width="113" Name="text22" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button Content="Clear" Canvas.Left="196" Canvas.Top="157" Click="Button_Click_1" Width="167" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Canvas.Left="403" TextWrapping="Wrap" Text="TextBox" Canvas.Top="37" Width="113" Name="text22" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="Dell" Canvas.Left="350" Canvas.Top="76" Click="Button_Click_1" Width="167" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="StartPosition" Canvas.Left="350" Canvas.Top="16"  Width="167" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Collision" Canvas.Left="350" Canvas.Top="96" Click="Button_Click_3" Width="167" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+
     </Canvas>
 </Window>
